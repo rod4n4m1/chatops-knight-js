@@ -1,0 +1,25 @@
+# Private keys
+*.key
+tests/*.key
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# npm
+node_modules/*
+
+# Optional npm cache directory
+.npm
+
+# dotenv environment variables file
+*.env
+tests/*.env
+*/*.env
+
+# Mac things
+.DS_Store
+*/.DS_Store

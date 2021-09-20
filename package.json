@@ -1,0 +1,38 @@
+{
+  "name": "chatop-knight-js",
+  "version": "0.1.0",
+  "description": "A node.js module to interact with the Kyndryl ChatOps Knight API.",
+  "main": "Knight.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rod4n4m1/chatops-knight-js"
+  },
+  "keywords": [
+    "kyndryl",
+    "nodejs",
+    "promises",
+    "api",
+    "async",
+    "chatops",
+    "knight"
+  ],
+  "author": "Rod Anami <rod.anami@kyndryl.com> (https://github.com/rod4n4m1)",
+  "contributors": [
+  ],
+  "license": "EPL-2.0",
+  "bugs": {
+    "url": "https://github.com/rod4n4m1/chatops-knight-js/issues"
+  },
+  "homepage": "https://github.com/rod4n4m1/chatops-knight-js#readme",
+  "dependencies": {
+    "axios": ">=0.21.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.4"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
