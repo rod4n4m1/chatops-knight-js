@@ -7,7 +7,7 @@
 | Endpoint | `/api/v1/initiateTicket` |
 | Method | `POST` |
 | Type | `Asynchronous` |
-| Params | `{String<required>} sourceId<br>{String<required>} sourceToken<br> {String<optional>} transactionId<br>{Object<required>} payload` |
+| Params | `{String<required>} sourceId`<br>`{String<required>} sourceToken`<br> `{String<optional>} transactionId`<br>`{Object<required>} payload` |
 | Returns | `Promise<Object>` |
 |  |  |
 
