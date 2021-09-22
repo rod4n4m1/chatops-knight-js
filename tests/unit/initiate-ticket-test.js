@@ -6,6 +6,7 @@ const CACert = process.env.CK_CA_CERT;
 const KnightURL = process.env.CK_BASE_URL;
 const SourceId = process.env.CK_SOURCE_ID;
 const SourceToken = process.env.CK_SOURCE_TOKEN;
+const ApiPath = process.env.CK_API_PATH;
 let payload = {
   accountCodeLocators: [
     {
@@ -41,6 +42,7 @@ const knight = new Knight( {
     https: true,
     cacert: CACert,
     baseUrl: KnightURL,
+    rootPath: ApiPath,
     timeout: 3000,
     proxy: false
 });
@@ -52,5 +54,10 @@ transactionId = `${mockData.timeStamp}`;
 knight.initiateTicket(SourceId, SourceToken, transactionId, payload).then(function(data){
   console.log('> initiateTicket output: \n', data);
 }).catch(function(initiateTicketError){
-  console.error('initiateTicket error: \n',initiateTicketError);
+  if(initiateTicketError.isKnightError) {
+    console.error('initiateTicket error: \n',initiateTicketError.knightHelpMessage);
+    console.error('initiateTicket error details: \n',initiateTicketError.knightHelpMessage.details);
+  } else {
+    console.error('initiateTicket error full stack: \n',initiateTicketError);
+  }
 });

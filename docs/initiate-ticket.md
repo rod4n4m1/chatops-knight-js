@@ -72,6 +72,10 @@ let payload = {
 knight.initiateTicket(SourceId, SourceToken, transactionId, payload).then(function(data){
   console.log('> initiateTicket output: \n', data);
 }).catch(function(initiateTicketError){
-  console.error('initiateTicket error: \n',initiateTicketError);
+  if(initiateTicketError.isKnightError) {
+    console.error('initiateTicket error: \n',initiateTicketError.knightHelpMessage);
+  } else {
+    console.error('initiateTicket error full stack: \n',initiateTicketError);
+  }
 });
 ```
