@@ -42,7 +42,7 @@ const knight = new Knight( {
     cacert: CACert,
     baseUrl: KnightURL,
     timeout: 2000,
-    rejectUnauthorized: false,
+    rejectUnauthorized: true,
     proxy: false
 });
 
