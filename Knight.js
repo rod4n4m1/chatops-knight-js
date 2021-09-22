@@ -122,14 +122,14 @@ class Knight {
   /**
   * @returns {Promise<Object>}
   */
-  async initiateTicket(sourceId, sourceToken, transationId, payload){
+  async initiateTicket(sourceId, sourceToken, transactionId, payload){
     const Options = {
       url: `${this.rootPath}/${config.ckInitiateTicket[0]}`,
       method: config.ckInitiateTicket[1],
       headers: {
         'X-Chatops-Source-Id': sourceId,
         'X-Chatops-Source-Api-Token': sourceToken,
-        'X-Transaction-Id': transationId,
+        'X-Transaction-Id': transactionId,
       },
       data: payload
     }

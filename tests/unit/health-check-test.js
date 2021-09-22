@@ -14,7 +14,6 @@ const knight = new Knight( {
     baseUrl: KnightURL,
     rootPath: '',
     timeout: 2000,
-    rejectUnauthorized: true,
     proxy: false
 });
 

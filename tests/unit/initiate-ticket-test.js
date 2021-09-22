@@ -10,7 +10,7 @@ let payload = {
   accountCodeLocators: [
     {
       SearchKey: "accountCode",
-      SearchValue: "rod4n4m1"
+      SearchValue: "demo1"
     }
   ],
   eventId: "ChatOps-Knight-JS-SDK",
@@ -41,16 +41,15 @@ const knight = new Knight( {
     https: true,
     cacert: CACert,
     baseUrl: KnightURL,
-    timeout: 2000,
-    rejectUnauthorized: true,
+    timeout: 3000,
     proxy: false
 });
 
 const mockData = generateMockData();
 payload.ticketId = `${mockData.eventTicket}`;
-transationId = `${mockData.timeStamp}`;
+transactionId = `${mockData.timeStamp}`;
 
-knight.initiateTicket(SourceId, SourceToken, transationId, payload).then(function(data){
+knight.initiateTicket(SourceId, SourceToken, transactionId, payload).then(function(data){
   console.log('> initiateTicket output: \n', data);
 }).catch(function(initiateTicketError){
   console.error('initiateTicket error: \n',initiateTicketError);

@@ -54,8 +54,6 @@ This module provides a set of functions to help **JavaScript** Developers workin
   // Example:
   // proxy: { host: proxy.ip, port: proxy.port }
   proxy: false,
-  // Enable mutual TLS between client and server
-  rejectUnauthorized: true
 }
 ```
 
@@ -74,8 +72,7 @@ const knight = new Knight( {
     baseUrl: 'https://chatops-prod-int.extnet.ibm.com/',
     rootPath: 'api/v1',
     timeout: 2000,
-    proxy: false,
-    rejectUnauthorized: true
+    proxy: false
 });
 ```
 
@@ -90,8 +87,7 @@ const knight = new Knight( {
     baseUrl: 'https://chatops-dev-int.extnet.ibm.com/',
     rootPath: 'api/v1',
     timeout: 5000,
-    proxy: false,
-    rejectUnauthorized: false
+    proxy: false
 });
 ```
 
@@ -130,10 +126,11 @@ catch(err) {
 
 The following ChatOps Knight [API](https://chatops-dev-int.extnet.ibm.com/) endpoints are currently covered.
 
-| **Endpoint** | **Function** | **Doc** |
-|:--------------|:--------------:|:--------------:|
-| `/ping` | `.healthCheck()` | TBC |
-|  |  |  |
+| **Endpoint** | **Function** | **Method** | **Dev Doc** |
+|:--------------|:--------------:|:--------------:|:--------------:|
+| `/ping` | `.healthCheck()` | GET | [Doc](./docs/health-check.md) |
+| `/api/v1/initiateTicket` | `.initiateTicket(params)` | POST | [Doc](./docs/initiate-ticket.md) |
+|  |  |  |  |
 
 
 ### Creating your test environment (with HTTPS)
