@@ -23,6 +23,7 @@ let payload = {
   callbackAddress: "https://a29c501d-6659-42b1-8408-400f567e40f2.mock.pstmn.io/initiateChatOpsIncidentProcess"
 }
 
+// This is only for avoid creating collisions in the event id and set a meaningful transaction id
 const generateMockData = function () {
   let eventTicket = "";
   let timeString = "";

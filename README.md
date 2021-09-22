@@ -44,9 +44,10 @@ This module provides a set of functions to help **JavaScript** Developers workin
   cert: './client.crt',
   key: './client.key',
   cacert: './ca.crt',
-  // Indicate the server name/IP, port and API version for the ChatOps Knight,
-  // all paths are relative to this one
-  baseUrl: 'https://chatops-prod-int.extnet.ibm.com/api/v1',
+  // Indicate the server name for the ChatOps Knight API, all paths are relative to this one
+  baseUrl: 'https://chatops-prod-int.extnet.ibm.com',
+  // Indicate the internal path with API version
+  rootPath: 'api/v1',
   // HTTP request timeout in milliseconds
   timeout: 2000,
   // If should use a proxy or not by the HTTP request

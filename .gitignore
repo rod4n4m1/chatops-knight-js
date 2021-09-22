@@ -23,3 +23,6 @@ tests/*.env
 # Mac things
 .DS_Store
 */.DS_Store
+
+# Suggestions to CK API dev team
+api-enhancements-request.md
