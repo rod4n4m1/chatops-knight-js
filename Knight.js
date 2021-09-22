@@ -33,7 +33,7 @@ const getHttpsAgent = function(certificate, key, cacert, rejectUnauthorized) {
 }
 
 // Internal function - creates new axios instance
-const getAxiosInstance = function(baseurl, timeout, agent, proxy) {
+const getAxiosInstance = function(baseurl, timeout, agent, rootPath, proxy) {
   return axios.create({
       baseURL: baseurl,
       timeout: timeout,
@@ -69,7 +69,9 @@ const parseAxiosError = function(error){
   Error.captureStackTrace(error, parseAxiosError);
   if (error.response && error.response.status) {
     error.isKnightError = true;
-    // error.knightHelpMessage = helpMessage;
+    if (error.response.data.error) {
+      error.knightHelpMessage = error.response.data.error;
+    }
   }
   return error;
 }
@@ -84,6 +86,7 @@ class Knight {
     this.baseUrl = params.baseUrl || config.baseUrl;
     this.timeout = params.timeout || config.timeout;
     this.proxy = params.proxy || config.proxy;
+    this.rootPath = params.rootPath || config.rootPath;
     this.rejectUnauthorized = params.rejectUnauthorized || false;
     try {
       if (this.https) {
@@ -115,13 +118,13 @@ class Knight {
     }
   }
 
-  // /ping API endpoint
+  // /initiateTicket API endpoint
   /**
   * @returns {Promise<Object>}
   */
   async initiateTicket(sourceId, sourceToken, transationId, payload){
     const Options = {
-      url: config.ckInitiateTicket[0],
+      url: `${this.rootPath}/${config.ckInitiateTicket[0]}`,
       method: config.ckInitiateTicket[1],
       headers: {
         'X-Chatops-Source-Id': sourceId,

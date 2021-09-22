@@ -40,7 +40,6 @@ const knight = new Knight( {
     https: true,
     cacert: CACert,
     baseUrl: KnightURL,
-    rootPath: '',
     timeout: 2000,
     rejectUnauthorized: false,
     proxy: false
@@ -51,7 +50,7 @@ payload.ticketId = `${mockData.eventTicket}`;
 transationId = `${mockData.timeStamp}`;
 
 knight.initiateTicket(SourceId, SourceToken, transationId, payload).then(function(data){
-  console.log('> healthCheck output: \n', data);
-}).catch(function(healthError){
-  console.error('healthCheck error: \n',healthError);
+  console.log('> initiateTicket output: \n', data);
+}).catch(function(initiateTicketError){
+  console.error('initiateTicket error: \n',initiateTicketError);
 });
