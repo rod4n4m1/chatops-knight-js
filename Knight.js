@@ -104,8 +104,31 @@ class Knight {
   */
   async healthCheck(){
     const Options = {
-      url: config.ckHealth,
-      method: 'get'
+      url: config.ckHealth[0],
+      method: config.ckHealth[1]
+    }
+    try {
+      const response = await this.instance(Options);
+      return parseAxiosResponse(response);
+    } catch(err) {
+      throw parseAxiosError(err);
+    }
+  }
+
+  // /ping API endpoint
+  /**
+  * @returns {Promise<Object>}
+  */
+  async initiateTicket(sourceId, sourceToken, transationId, payload){
+    const Options = {
+      url: config.ckInitiateTicket[0],
+      method: config.ckInitiateTicket[1],
+      headers: {
+        'X-Chatops-Source-Id': sourceId,
+        'X-Chatops-Source-Api-Token': sourceToken,
+        'X-Transaction-Id': transationId,
+      },
+      data: payload
     }
     try {
       const response = await this.instance(Options);

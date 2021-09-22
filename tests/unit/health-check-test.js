@@ -1,7 +1,7 @@
-//Simple test
+//Unit Test
 
 // source process.env
-// node health-smoke-test.js
+// node health-check-test.js
 const ClientCert = process.env.CLIENT_CERT;
 const ClientKey = process.env.CLIENT_KEY;
 const CACert = process.env.CK_CA_CERT;

@@ -11,7 +11,7 @@ This module provides a set of functions to help **JavaScript** Developers workin
 
 * NodeJs
   * Minimum: v10.x
-  * Recommended: **v12.x**
+  * Recommended: **v12.x** or **v14.x**
 * npm
   * Tested on: **v7.24.x**
 * Kyndryl ChatOps Knight
@@ -48,11 +48,13 @@ This module provides a set of functions to help **JavaScript** Developers workin
   // all paths are relative to this one
   baseUrl: 'https://chatops-prod-int.extnet.ibm.com/api/v1',
   // HTTP request timeout in milliseconds
-  timeout: 1000,
+  timeout: 2000,
   // If should use a proxy or not by the HTTP request
   // Example:
   // proxy: { host: proxy.ip, port: proxy.port }
-  proxy: false
+  proxy: false,
+  // Enable mutual TLS between client and server
+  rejectUnauthorized: true
 }
 ```
 
@@ -72,6 +74,7 @@ const knight = new Knight( {
     rootPath: 'api/v1',
     timeout: 2000,
     proxy: false,
+    rejectUnauthorized: true
 });
 ```
 
@@ -100,7 +103,7 @@ const status = await knight.healthCheck();
 
 ### Error handling
 
-This package extends the error stack to differentiate if the exception occurred on the knight API layer or not. Also, adds a help message from the knight API docs.
+This package extends the error stack to differentiate if the exception occurred on the ChatOps Knight API layer or not. Also, adds a help message from the knight API docs.
 
 ```javascript
 try {
@@ -109,7 +112,7 @@ try {
 // An exception happened and it was thrown
 catch(err) {
   if(err.isKnightError) {
-    // This an error from knight API
+    // This an error from ChatOps Knight API
     // Check Knight hint on this error
     console.log(err.knightHelpMessage);
   }
@@ -122,22 +125,14 @@ catch(err) {
 }
 ```
 
-Check below docs for more information on specific function groups.
-
-### List of functions available
-
-| **Group** | **Link** |
-|:---------------------------------------|:--------------:|
-|  |  |
-
-
 ### Coverage and Limitations
 
-The following ChatOps Knight [API](https://chatops-dev-int.extnet.ibm.com/) endpoints are currently covered:
+The following ChatOps Knight [API](https://chatops-dev-int.extnet.ibm.com/) endpoints are currently covered.
 
-*
-
-*
+| **Endpoint** | **Function** | **Doc** |
+|:--------------|:--------------:|:--------------:|
+| `/ping` | `.healthCheck()` | TBC |
+|  |  |  |
 
 
 ### Creating your test environment (with HTTPS)
@@ -146,7 +141,8 @@ Follow the detailed instructions from this [doc]().
 
 ### References
 
-  *
+  * ChatOps Knight Production [Internal API](https://chatops-prod-int.extnet.ibm.com/) documentation
+  * ChatOps Knight Development [Internal API](https://chatops-dev-int.extnet.ibm.com/) documentation
 
 
 ### Contributing
@@ -162,7 +158,7 @@ If you want to see new features or enhancements to the current ones, we would lo
 Written by Rod Anami <rod.anami@kyndryl.com>, September 2021.
 
 ### Contributors
-* 
+*
 
 
 ### License
