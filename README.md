@@ -128,8 +128,8 @@ The following ChatOps Knight [API](https://chatops-dev-int.extnet.ibm.com/) endp
 
 | **Endpoint** | **Function** | **Method** | **Dev Doc** |
 |:--------------|:--------------:|:--------------:|:--------------:|
-| `/ping` | `.healthCheck()` | GET | [Doc](./docs/health-check.md) |
-| `/api/v1/initiateTicket` | `.initiateTicket(params)` | POST | [Doc](./docs/initiate-ticket.md) |
+| `/ping` | `.healthCheck()` | GET | [Doc](docs/health-check.md) |
+| `/api/v1/initiateTicket` | `.initiateTicket(params)` | POST | [Doc](docs/initiate-ticket.md) |
 |  |  |  |  |
 
 
