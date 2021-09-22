@@ -35,7 +35,7 @@ const generateMockData = function () {
   return { eventTicket: eventTicket, timeStamp: TimeStamp };
 };
 
-const Knight = require('../Knight');
+const Knight = require('../../Knight');
 const knight = new Knight( {
     https: true,
     cacert: CACert,

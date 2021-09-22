@@ -7,7 +7,7 @@ const ClientKey = process.env.CLIENT_KEY;
 const CACert = process.env.CK_CA_CERT;
 const KnightURL = process.env.CK_BASE_URL;
 
-const Knight = require('../Knight');
+const Knight = require('../../Knight');
 const knight = new Knight( {
     https: true,
     cacert: CACert,
