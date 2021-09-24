@@ -31,7 +31,7 @@ knight.initiateTicket(@params).then((res)=> {
 **Functional paradigm**
 
 ```
-const iniTicket = function (sourceId, sourceToken, payload) => {
+const startIncManager = function (sourceId, sourceToken, payload) => {
   knight.initiateTicket(sourceId, sourceToken, null, payload).then((res)=> {
     return res;
   }).catch((err) => {

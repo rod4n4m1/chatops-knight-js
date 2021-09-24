@@ -13,10 +13,13 @@
 
 ### Usage
 
+**Async-Await call**
+
 ```
 const health = await knight.healthCheck();
 ```
-OR
+
+**Call,then,catch**
 
 ```
 knight.healthCheck().then((res)=> {
@@ -24,6 +27,22 @@ knight.healthCheck().then((res)=> {
 }).catch((error) => {
   // Handle error
 });
+```
+
+**Functional paradigm**
+
+```
+const isAPIHealth = function () => {
+  knight.healthCheck().then((res)=> {
+    return true;
+  }).catch((error) => {
+    return false;
+  });
+};
+
+if (isAPIHealth()) {
+  // Do something
+}
 ```
 
 ### Typical Results
