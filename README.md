@@ -112,6 +112,10 @@ catch(err) {
     // This an error from ChatOps Knight API
     // Check Knight hint on this error
     console.log(err.knightHelpMessage);
+    // For some endpoints there are details on the error message
+    if (err.knightHelpMessage.details) {
+      console.error(err.knightHelpMessage.details);
+    }
   }
   else {
     // Here is still the full Axios error, e.g. err.isAxiosError, err.response, err.request

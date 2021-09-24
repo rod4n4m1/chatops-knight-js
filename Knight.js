@@ -79,13 +79,8 @@ const parseAxiosError = function(error){
 }
 
 // Internal function - generate CK API Token out of the Source Token
-const getAPIToken = function(payload, sourceId, sourceToken){
+const generateAPIToken = function(signPayload, sourceId, sourceToken){
   const TimeStamp = moment().format();
-  let signPayload = {
-    'X-Chatops-Source-Id': sourceId,
-    ticketId: payload.ticketId,
-    callbackAddress: payload.callbackAddress
-  };
   signPayload.timestamp = TimeStamp;
   //console.log(signPayload);
   const Token = jwt.encode(signPayload, sourceToken);
@@ -103,7 +98,7 @@ class Knight {
     this.timeout = params.timeout || config.timeout;
     this.proxy = params.proxy || config.proxy;
     this.rootPath = params.rootPath || config.rootPath;
-    this.rejectUnauthorized = params.rejectUnauthorized? true : false;
+    this.rejectUnauthorized = params.rejectUnauthorized;
     try {
       if (this.https) {
         this.agent = getHttpsAgent(this.cert, this.key, this.cacert, this.rejectUnauthorized);
@@ -143,7 +138,12 @@ class Knight {
   * @returns {Promise<Object>}
   */
   async initiateTicket(sourceId, sourceToken, transactionId, payload){
-    const APIToken = getAPIToken(payload, sourceId, sourceToken);
+    let signPayload = {
+      'X-Chatops-Source-Id': sourceId,
+      ticketId: payload.ticketId,
+      callbackAddress: payload.callbackAddress
+    };
+    const APIToken = generateAPIToken(signPayload, sourceId, sourceToken);
     const Options = {
       url: `${this.rootPath}/${config.ckInitiateTicket[0]}`,
       method: config.ckInitiateTicket[1],

@@ -13,10 +13,12 @@
 
 ### Usage
 
+**Await call**
 ```
-const health = await knight.initiateTicket(sourceId, sourceToken, transactionId, payload);
+const iniTicket = await knight.initiateTicket(sourceId, sourceToken, transactionId, payload);
 ```
-OR
+
+**Call,then,catch**
 
 ```
 knight.initiateTicket(@params).then((res)=> {
@@ -26,10 +28,27 @@ knight.initiateTicket(@params).then((res)=> {
 });
 ```
 
+**Functional paradigm**
+
+```
+const iniTicket = function (sourceId, sourceToken, payload) => {
+  knight.initiateTicket(sourceId, sourceToken, null, payload).then((res)=> {
+    return res;
+  }).catch((err) => {
+    return err;
+  });
+};
+
+console.log(iniTicket(sourceId, sourceToken, payload));
+```
+
 ### Typical Results
 
 ```
-
+{
+  success: true,
+  errorMessage: []
+}
 ```
 
 ### Payload details
