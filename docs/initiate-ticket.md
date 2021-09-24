@@ -56,7 +56,7 @@ let payload = {
   accountCodeLocators: [
     {
       SearchKey: "accountCode",
-      SearchValue: "demo1"
+      SearchValue: "demo3"
     }
   ],
   eventId: "ChatOps-Knight-JS-SDK",

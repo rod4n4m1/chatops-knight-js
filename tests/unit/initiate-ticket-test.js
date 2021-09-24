@@ -11,7 +11,7 @@ let payload = {
   accountCodeLocators: [
     {
       SearchKey: "accountCode",
-      SearchValue: "demo1"
+      SearchValue: "demo3"
     }
   ],
   eventId: "ChatOps-Knight-JS-SDK",
@@ -54,10 +54,12 @@ transactionId = `${mockData.timeStamp}`;
 knight.initiateTicket(SourceId, SourceToken, transactionId, payload).then(function(data){
   console.log('> initiateTicket output: \n', data);
 }).catch(function(initiateTicketError){
+  console.error('Payload: \n', payload);
   if(initiateTicketError.isKnightError) {
     console.error('initiateTicket error: \n',initiateTicketError.knightHelpMessage);
-    console.error('initiateTicket error details: \n',initiateTicketError.knightHelpMessage.details);
-  } else {
-    console.error('initiateTicket error full stack: \n',initiateTicketError);
+    if (initiateTicketError.knightHelpMessage.details) {
+      console.error('initiateTicket error details: \n',initiateTicketError.knightHelpMessage.details);
+    }
   }
+  console.error('============Full Stack=============== \n',initiateTicketError);
 });
