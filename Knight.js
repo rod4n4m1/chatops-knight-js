@@ -82,7 +82,7 @@ const parseAxiosError = function(error){
 const generateAPIToken = function(signPayload, sourceId, sourceToken){
   const TimeStamp = moment().format();
   signPayload.timestamp = TimeStamp;
-  //console.log(signPayload);
+  // console.log(signPayload);
   const Token = jwt.encode(signPayload, sourceToken);
   return Token;
 }
@@ -129,7 +129,7 @@ class Knight {
     }
   }
 
-  // /initiateTicket API endpoint
+  // /api/v1/initiateTicket API endpoint
   /**
   * @param {String<required>} sourceId
   * @param {String<required>} sourceToken
@@ -138,7 +138,7 @@ class Knight {
   * @returns {Promise<Object>}
   */
   async initiateTicket(sourceId, sourceToken, transactionId, payload){
-    let signPayload = {
+    const signPayload = {
       'X-Chatops-Source-Id': sourceId,
       ticketId: payload.ticketId,
       callbackAddress: payload.callbackAddress
@@ -147,6 +147,39 @@ class Knight {
     const Options = {
       url: `${this.rootPath}/${config.ckInitiateTicket[0]}`,
       method: config.ckInitiateTicket[1],
+      headers: {
+        'X-Chatops-Source-Id': sourceId,
+        'X-Chatops-Source-Api-Token': APIToken,
+        'X-Transaction-Id': transactionId,
+      },
+      data: payload
+    }
+    try {
+      const response = await this.instance(Options);
+      return parseAxiosResponse(response);
+    } catch(err) {
+      throw parseAxiosError(err);
+    }
+  }
+
+  // /api/v2/postMessage API endpoint
+  /**
+  * @param {String<required>} sourceId
+  * @param {String<required>} sourceToken
+  * @param {String<required>} transactionId
+  * @param {Object<required>} payload
+  * @returns {Promise<Object>}
+  */
+  async postMessage(sourceId, sourceToken, transactionId, payload){
+    const signPayload = {
+      'X-Chatops-Source-Id': sourceId,
+      'X-Transaction-Id': transactionId,
+      channelId: payload.channelId
+    };
+    const APIToken = generateAPIToken(signPayload, sourceId, sourceToken);
+    const Options = {
+      url: `${this.rootPath}/${config.ckPostMessage[0]}`,
+      method: config.ckPostMessage[1],
       headers: {
         'X-Chatops-Source-Id': sourceId,
         'X-Chatops-Source-Api-Token': APIToken,

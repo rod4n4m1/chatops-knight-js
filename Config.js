@@ -4,8 +4,10 @@ const config = {
   timeout: 1000,
   proxy: false,
   rootPath: 'api/v1',
+  // API endpoint, method
   ckHealth: ['ping', 'get'],
-  ckInitiateTicket: ['initiateTicket', 'post']
+  ckInitiateTicket: ['initiateTicket', 'post'],
+  ckPostMessage: ['postMessage', 'post']
 };
 
 module.exports = config;
