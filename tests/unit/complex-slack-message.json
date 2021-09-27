@@ -1,0 +1,86 @@
+{
+	"blocks": [
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://www.autointelli.com/image/icons/event-correlation-2.png",
+					"alt_text": "Temp icon"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Event Management module*\n\nEvent: `EVT202209252000_0000`\n\nSource: `AIOps`\n\nOccurrence date and time: `2021-09-25 20:00 UTC`\n\nDemonstration mode `enabled`, no service has been harmed."
+				}
+			]
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "http://www.clker.com/cliparts/V/8/6/6/j/L/information-icon-md.png",
+					"alt_text": "Temp icon"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Description:* \n\nStorage device `KYNDRYL900_UK` is not responding under the configured limits causing impact to several services including `DB2` and `www.acme.com` web site."
+				}
+			]
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://www.medvetforpets.com/wp-content/uploads/2016/10/clipboard-icon-768x768.jpg",
+					"alt_text": "Temp icon"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Business Impact:*\n\n`www.acme.com` web site is unavailble for the ACME users causing revenue loss as it holds ACME main sales venue.\n\n*HIGH IMPACT*"
+				}
+			]
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://banner2.cleanpng.com/20180508/ejq/kisspng-computer-icons-marketing-printed-circuit-board-che-5af221d7d7fd05.4631293815258178158847.jpg",
+					"alt_text": "cute cat"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Recommended Actions:* \n\nBased on previous similar incidents, `AIOps` recommends run a full soft recycle on the `KYNDRYL900_UK` storage device and verify all fiber ports. Then restart `DB2` instances."
+				}
+			]
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://cdn.icon-icons.com/icons2/1502/PNG/512/officedatabase_103574.png",
+					"alt_text": "cute cat"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Additional Data:* \n\nSee the thread for more information with graphics, topology, raw data from the monitoring and configuration item management systems."
+				}
+			]
+		},
+		{
+			"type": "divider"
+		}
+	]
+}

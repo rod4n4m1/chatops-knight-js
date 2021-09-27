@@ -11,6 +11,7 @@ const CallbackURL = process.env.CK_CALLBACK_URL;
 const TransationID = process.env.CK_TRANSACTION_ID;
 const SlackMessageFile = process.env.CK_SLACK_MESSAGE_FILE;
 const SlackChannelID = process.env.CK_SLACK_CHANNEL_ID;
+const SlackWorkspaceName = process.env.CK_SLACK_WS_NAME;
 
 const AccountLocator = [
     {
@@ -28,8 +29,8 @@ try {
 const payload = {
   accountCodeLocators: AccountLocator,
   collabPlatform: "SLACK",
-  ticketId: "EVT202109220000_0000",
-  workspaceName: "",
+  //ticketId: "EVT202109220000_0000",
+  //workspaceName: SlackWorkspaceName,
   message: message,
   channelId: SlackChannelID,
   callbackUrl: CallbackURL,

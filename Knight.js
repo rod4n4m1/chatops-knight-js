@@ -83,7 +83,9 @@ const generateAPIToken = function(signPayload, sourceId, sourceToken){
   const TimeStamp = moment().format();
   signPayload.timestamp = TimeStamp;
   // console.log(signPayload);
+  // console.log(sourceToken);
   const Token = jwt.encode(signPayload, sourceToken);
+  // console.log(Token);
   return Token;
 }
 
