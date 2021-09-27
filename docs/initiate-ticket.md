@@ -39,7 +39,7 @@ const startIncManager = function (sourceId, sourceToken, payload) => {
   });
 };
 
-console.log(iniTicket(sourceId, sourceToken, payload));
+console.log(startIncManager(sourceId, sourceToken, payload));
 ```
 
 ### Typical Results
@@ -66,18 +66,21 @@ console.log(iniTicket(sourceId, sourceToken, payload));
 | ticketImpact | String | No |  |
 | ticketPriority | Number | Yes |  |
 | ticketType | String | No |  |
+|  |  |  |  |
 
 
 ### Examples
 
 ```
-let payload = {
-  accountCodeLocators: [
+const AccountLocator = [
     {
       SearchKey: "accountCode",
-      SearchValue: "demo3"
+      SearchValue: "demo"
     }
-  ],
+];
+
+let payload = {
+  accountCodeLocators: AccountLocator,
   eventId: "ChatOps-Knight-JS-SDK",
   ticketId: "EVT202109220000_0000",
   ticketPriority: 1,
@@ -85,7 +88,7 @@ let payload = {
   ticketType: "Event",
   ticketImpact: "High",
   ticketDesc: "ChatOps Knight JS - initiateTicket endpoint unit test.",
-  callbackAddress: "https://a29c501d-6659-42b1-8408-400f567e40f2.mock.pstmn.io/initiateChatOpsIncidentProcess"
+  callbackAddress: "https://response_url/endpoint"
 }
 
 knight.initiateTicket(SourceId, SourceToken, transactionId, payload).then(function(data){

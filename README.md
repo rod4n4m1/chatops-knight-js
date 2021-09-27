@@ -134,6 +134,7 @@ The following ChatOps Knight [API](https://chatops-dev-int.extnet.ibm.com/) endp
 |:--------------|:--------------|:--------------|:--------------:|
 | `/ping` | `.healthCheck()` | GET | [Doc](docs/health-check.md) |
 | `/api/v1/initiateTicket` | `.initiateTicket(@params)` | POST | [Doc](docs/initiate-ticket.md) |
+| `/api/v2/postMessage` | `.postMessage(@param)` | POST | [Doc](docs/post-messsage.md) |
 |  |  |  |  |
 
 
@@ -160,8 +161,7 @@ If you want to see new features or enhancements to the current ones, we would lo
 Written by Rod Anami <rod.anami@kyndryl.com>, September 2021.
 
 ### Contributors
-*
-
+* None
 
 ### License
 This package is licensed under the [Eclipse Public License 2.0](https://opensource.org/licenses/EPL-2.0).
