@@ -1,5 +1,5 @@
 {
-  "name": "chatop-knight-js",
+  "name": "chatops-knight-js",
   "version": "0.1.0",
   "description": "A node.js module to interact with the Kyndryl ChatOps Knight API.",
   "main": "Knight.js",
