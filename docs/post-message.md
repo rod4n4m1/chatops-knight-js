@@ -1,6 +1,6 @@
 # ChatOps Knight JS
 
-## Initiate Ticket X-Ray
+## Post Message X-Ray
 
 | **Item** | **Value** |
 |:-----------------------|:-----------------------|

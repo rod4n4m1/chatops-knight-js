@@ -91,7 +91,7 @@ const knight = new Knight( {
 });
 ```
 
-Check health status of the knight server:
+Check health status of the ChatOps Knight API server:
 
 ```javascript
 const status = await knight.healthCheck();
@@ -128,7 +128,7 @@ catch(err) {
 
 ### Coverage and Limitations
 
-The following ChatOps Knight [API](https://chatops-dev-int.extnet.ibm.com/) endpoints are currently covered.
+The following ChatOps Knight API endpoints are currently covered.
 
 | **Endpoint** | **Function** | **Method** | **Dev Doc** |
 |:--------------|:--------------|:--------------|:--------------:|
