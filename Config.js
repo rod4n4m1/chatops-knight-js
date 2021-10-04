@@ -7,7 +7,8 @@ const config = {
   // API endpoint, method
   ckHealth: ['ping', 'get'],
   ckInitiateTicket: ['initiateTicket', 'post'],
-  ckPostMessage: ['postMessage', 'post']
+  ckPostMessage: ['postMessage', 'post'],
+  ckUpdateTicket: ['updateTicket', 'post']
 };
 
 module.exports = config;

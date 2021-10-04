@@ -4,10 +4,10 @@
 
 | **Item** | **Value** |
 |:-----------------------|:-----------------------|
-| Endpoint | `/api/v1/initiateTicket` |
+| Endpoint | `/api/v1/updateTicket` |
 | Method | `POST` |
 | Type | `Asynchronous` |
-| Params | `{String<required>} sourceId`<br>`{String<required>} sourceToken`<br> `{String<optional>} transactionId`<br>`{Object<required>} payload` |
+| Params | `{String<required>} sourceId`<br>`{String<required>} sourceToken`<br> `{String<optional>} transactionId`<br>`{Object<optional>} payload` |
 | Returns | `Promise<Object>` |
 |  |  |
 
@@ -15,13 +15,13 @@
 
 **Await call**
 ```
-const iniTicket = await knight.initiateTicket(sourceId, sourceToken, transactionId, payload);
+const iniTicket = await knight.updateTicket(sourceId, sourceToken, transactionId, payload);
 ```
 
 **Call,then,catch**
 
 ```
-knight.initiateTicket(@params).then((res)=> {
+knight.updateTicket(@params).then((res)=> {
   // Do something
 }).catch((error) => {
   // Handle error
@@ -31,15 +31,15 @@ knight.initiateTicket(@params).then((res)=> {
 **Functional paradigm**
 
 ```
-const startIncManager = function (sourceId, sourceToken, payload) => {
-  knight.initiateTicket(sourceId, sourceToken, null, payload).then((res)=> {
+const updateIncManager = function (sourceId, sourceToken, payload) => {
+  knight.updateTicket(sourceId, sourceToken, null, payload).then((res)=> {
     return res;
   }).catch((err) => {
     return err;
   });
 };
 
-console.log(startIncManager(sourceId, sourceToken, payload));
+console.log(updateIncManager(sourceId, sourceToken, payload));
 ```
 
 ### Typical Results
@@ -53,18 +53,26 @@ console.log(startIncManager(sourceId, sourceToken, payload));
 
 ### Payload details
 
+**Required**
+
 | **Properties** | **Type** | **Required** | **Description** |
 |:---------------|:---------|:---------:|:----------------------------|
 | accountCodeLocators | Object | **Yes** |  |
-| additionalProperties | Object | No |  |
-| callbackAddress | String | No |  |
-| channelCreateRequest | Object | No |  |
+| channelId | String | No |  |
 | environment | String | **Yes** |  |
 | eventId | String | **Yes** |  |
+| isFetchDetailsRequired | Boolean | No |  |
+| resolveTime | String | No |  |
+| resolver | String | No |  |
+| sourceIdentificationCode | String | No |  |
+| status | String | **Yes** |  |
+| statusDescription | String | No |  |
 | ticketAssignmentGroups | [String] | No |   |
-| ticketDesc | String | **Yes** |  |
+| ticketDesc | String | No |  |
+| ticketDetail | Object | No |  |
+| ticketId | String | **Yes** |  |
 | ticketImpact | String | No |  |
-| ticketPriority | Number | **Yes** |  |
+| ticketPriority | Number | No |  |
 | ticketType | String | No |  |
 |  |  |  |  |
 
@@ -86,18 +94,16 @@ let payload = {
   ticketPriority: 1,
   environment: "Prod",
   ticketType: "Event",
-  ticketImpact: "High",
-  ticketDesc: "ChatOps Knight JS - initiateTicket endpoint unit test.",
-  callbackAddress: "https://response_url/endpoint"
+  status: "Resolved",
 }
 
-knight.initiateTicket(SourceId, SourceToken, transactionId, payload).then(function(data){
-  console.log('> initiateTicket output: \n', data);
-}).catch(function(initiateTicketError){
+knight.updateTicket(SourceId, SourceToken, null, payload).then(function(data){
+  console.log('> updateTicket output: \n', data);
+}).catch(function(updateTicketError){
   if(initiateTicketError.isKnightError) {
-    console.error('initiateTicket error: \n',initiateTicketError.knightHelpMessage);
+    console.error('updateTicket error: \n',updateTicketError.knightHelpMessage);
   } else {
-    console.error('initiateTicket error full stack: \n',initiateTicketError);
+    console.error('updateTicket error full stack: \n',updateTicketError);
   }
 });
 ```

@@ -164,6 +164,39 @@ class Knight {
     }
   }
 
+  // /api/v1/updateTicket API endpoint
+  /**
+  * @param {String<required>} sourceId
+  * @param {String<required>} sourceToken
+  * @param {String} transactionId
+  * @param {Object<required>} payload
+  * @returns {Promise<Object>}
+  */
+  async updateTicket(sourceId, sourceToken, transactionId, payload){
+    const signPayload = {
+      'X-Chatops-Source-Id': sourceId,
+      ticketId: payload.ticketId,
+      callbackAddress: payload.callbackAddress
+    };
+    const APIToken = generateAPIToken(signPayload, sourceId, sourceToken);
+    const Options = {
+      url: `${this.rootPath}/${config.ckUpdateTicket[0]}`,
+      method: config.ckUpdateTicket[1],
+      headers: {
+        'X-Chatops-Source-Id': sourceId,
+        'X-Chatops-Source-Api-Token': APIToken,
+        'X-Transaction-Id': transactionId,
+      },
+      data: payload
+    }
+    try {
+      const response = await this.instance(Options);
+      return parseAxiosResponse(response);
+    } catch(err) {
+      throw parseAxiosError(err);
+    }
+  }
+
   // /api/v2/postMessage API endpoint
   /**
   * @param {String<required>} sourceId

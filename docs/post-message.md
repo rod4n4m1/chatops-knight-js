@@ -52,16 +52,16 @@ true
 
 | **Properties** | **Type** | **Required** | **Description** |
 |:---------------|:---------|:---------:|:----------------------------|
-| accountCodeLocators | Object | Yes |  |
+| accountCodeLocators | Object | **Yes** |  |
 | callbackUrl | String | No |   |
-| channelId | String | Yes |  |
-| collabPlatform | List | Yes | SLACK, TEAMS, or MM |
+| channelId | String | **Yes** |  |
+| collabPlatform | List | **Yes** | SLACK, TEAMS, or MM |
 | isUpdate | Boolean | No |  |
 | language | String | No |  |
-| message | Object | Yes | Slack simple JSON message or Slack Block Kit UI formatted message |
+| message | Object | **Yes** | Slack simple JSON message or Slack Block Kit UI formatted message |
 | ticketId | String | No | Broken, do not use |
 | ts | String | No |  |
-| workspaceName | String | Yes* | Required if accountCodeLocators is null  |
+| workspaceName | String | **Yes** | Required if accountCodeLocators is null  |
 |  |  |  |  |
 
 
