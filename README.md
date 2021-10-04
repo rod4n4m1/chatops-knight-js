@@ -9,7 +9,7 @@ This module provides a set of functions to help **JavaScript** Developers workin
 
 ## Requirements (MacOS/Windows)
 
-* NodeJs
+* Node JS
   * Minimum: v10.x
   * Recommended: **v12.x** or **v14.x**
 * npm
@@ -43,9 +43,9 @@ This module provides a set of functions to help **JavaScript** Developers workin
   // Client cert and key are optional now
   cert: './client.crt',
   key: './client.key',
-  cacert: './ca.crt',
+  cacert: './ck-prod-ca.crt',
   // Indicate the server name for the ChatOps Knight API, all paths are relative to this one
-  baseUrl: 'https://chatops-prod-int.extnet.ibm.com',
+  baseUrl: 'https://chatops-prod-int.kyndryl.net',
   // Indicate the internal path with API version
   rootPath: 'api/v1',
   // HTTP request timeout in milliseconds
@@ -68,8 +68,8 @@ const knight = new Knight( {
     https: true,
     cert: './client.crt',
     key: './client.key',
-    cacert: './ca.crt',
-    baseUrl: 'https://chatops-prod-int.extnet.ibm.com/',
+    cacert: './ck-prod-ca.crt',
+    baseUrl: 'https://chatops-prod-int.kyndryl.net/',
     rootPath: 'api/v1',
     timeout: 2000,
     proxy: false
@@ -83,8 +83,8 @@ const knight = require('chatops-knight-js');
 
 const knight = new Knight( {
     https: true,
-    cacert: './ca.crt',
-    baseUrl: 'https://chatops-dev-int.extnet.ibm.com/',
+    cacert: './ck-dev-ca.crt',
+    baseUrl: 'https://chatops-dev-int.kyndryl.net/',
     rootPath: 'api/v1',
     timeout: 5000,
     proxy: false
@@ -110,7 +110,7 @@ try {
 catch(err) {
   if(err.isKnightError) {
     // This an error from ChatOps Knight API
-    // Check Knight hint on this error
+    // Check Knight hints on this error
     console.log(err.knightHelpMessage);
     // For some endpoints there are details on the error message
     if (err.knightHelpMessage.details) {
@@ -120,7 +120,7 @@ catch(err) {
   else {
     // Here is still the full Axios error, e.g. err.isAxiosError, err.response, err.request
     // This allows handling of network/tls related issues
-    // Or just re-kthrow if you don't care
+    // Or just re-throw if you don't care
     throw err;
   }
 }
@@ -138,14 +138,14 @@ The following ChatOps Knight [API](https://chatops-dev-int.extnet.ibm.com/) endp
 |  |  |  |  |
 
 
-### Creating your test environment (with HTTPS)
+### Creating your DEV environment (with HTTPS)
 
-Follow the detailed instructions from this [doc]().
+Follow the detailed instructions from this [doc](dev/environment-build.md).
 
 ### References
 
-  * ChatOps Knight Production [Internal API](https://chatops-prod-int.extnet.ibm.com/) documentation
-  * ChatOps Knight Development [Internal API](https://chatops-dev-int.extnet.ibm.com/) documentation
+  * ChatOps Knight Production Internal API documentation
+  * ChatOps Knight Development Internal API documentation
 
 
 ### Contributing

@@ -1,0 +1,13 @@
+#!/bin/sh
+# ChatOps Knight API test env
+export CK_SOURCE_TOKEN=""
+export CK_SOURCE_ID=""
+export CK_BASE_URL="https://chatops-dev-int.extnet.ibm.com"
+export CK_API_PATH_V1="api/v1"
+export CK_API_PATH_V2="api/v2"
+export CK_CA_CERT="ck-dev-ca.crt"
+export CK_CALLBACK_URL=""
+export CK_TRANSACTION_ID=""
+export CK_SLACK_MESSAGE_FILE=""
+export CK_SLACK_CHANNEL_ID=""
+export CK_SLACK_WS_NAME=""
