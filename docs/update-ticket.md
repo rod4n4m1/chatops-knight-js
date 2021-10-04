@@ -94,7 +94,7 @@ let payload = {
   ticketPriority: 1,
   environment: "Prod",
   ticketType: "Event",
-  status: "Resolved",
+  status: "Resolved"
 }
 
 knight.updateTicket(SourceId, SourceToken, null, payload).then(function(data){

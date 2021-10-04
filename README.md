@@ -134,6 +134,7 @@ The following ChatOps Knight API endpoints are currently covered.
 |:--------------|:--------------|:--------------|:--------------:|
 | `/ping` | `.healthCheck()` | GET | [Doc](docs/health-check.md) |
 | `/api/v1/initiateTicket` | `.initiateTicket(@params)` | POST | [Doc](docs/initiate-ticket.md) |
+| `/api/v1/updateTicket` | `.updateTicket(@params)` | POST | [Doc](docs/update-ticket.md) |
 | `/api/v2/postMessage` | `.postMessage(@param)` | POST | [Doc](docs/post-message.md) |
 |  |  |  |  |
 

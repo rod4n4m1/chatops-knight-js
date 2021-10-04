@@ -18,11 +18,11 @@ const AccountLocator = [
 let payload = {
   accountCodeLocators: AccountLocator,
   eventId: "ChatOps-Knight-JS-SDK",
-  ticketId: "EVT202109220000_0000",
+  ticketId: "EVT202110041953_ZPIO",
   ticketPriority: 1,
   environment: "Prod",
   ticketType: "Event",
-  status: "Resolved",
+  status: "In Progress",
   resolver: "chatops-knight"
 }
 
@@ -40,7 +40,7 @@ knight.updateTicket(SourceId, SourceToken, TransationID, payload).then(function(
   console.log('> updateTicket output: \n', data);
 }).catch(function(updateTicketError){
   console.error('Payload: \n', payload);
-  if(updateTicket.isKnightError) {
+  if(updateTicketError.isKnightError) {
     console.error('updateTicket error: \n',updateTicketError.knightHelpMessage);
     if (updateTicketError.knightHelpMessage.details) {
       console.error('updateTicket error details: \n',updateTicketError.knightHelpMessage.details);
