@@ -1,6 +1,6 @@
 # ChatOps Knight JS
 
-## Initiate Ticket X-Ray
+## Update Ticket X-Ray
 
 | **Item** | **Value** |
 |:-----------------------|:-----------------------|
@@ -45,10 +45,7 @@ console.log(updateIncManager(sourceId, sourceToken, payload));
 ### Typical Results
 
 ```
-{
-  success: true,
-  errorMessage: []
-}
+true
 ```
 
 ### Payload details
@@ -65,7 +62,7 @@ console.log(updateIncManager(sourceId, sourceToken, payload));
 | resolveTime | String | No |  |
 | resolver | String | No |  |
 | sourceIdentificationCode | String | No |  |
-| status | String | **Yes** |  |
+| status | String | **Yes** | Valid values are `NEW`, `DISCOVERY`, `OPEN`, `INPROGRESS`, `REOPEN`, `HOLD`, `PENDING`, `CLOSE`, `CANCEL`, and `RESOLVE` |
 | statusDescription | String | No |  |
 | ticketAssignmentGroups | [String] | No |   |
 | ticketDesc | String | No |  |

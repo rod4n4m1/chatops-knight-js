@@ -22,7 +22,7 @@ let payload = {
   ticketPriority: 1,
   environment: "Prod",
   ticketType: "Event",
-  status: "In Progress",
+  status: "INPROGRESS",
   resolver: "chatops-knight"
 }
 
