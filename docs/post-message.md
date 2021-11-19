@@ -5,7 +5,7 @@
 | **Item** | **Value** |
 |:-----------------------|:-----------------------|
 | Endpoint | `/api/v2/postMessage` |
-| Method | `POST` |
+| HTTP Method | `POST` |
 | Type | `Asynchronous` |
 | Params | `{String<required>} sourceId`<br>`{String<required>} sourceToken`<br> `{String<required>} transactionId`<br>`{Object<required>} payload` |
 | Returns | `Promise<Object>` |

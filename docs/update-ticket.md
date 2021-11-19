@@ -5,7 +5,7 @@
 | **Item** | **Value** |
 |:-----------------------|:-----------------------|
 | Endpoint | `/api/v1/updateTicket` |
-| Method | `POST` |
+| HTTP Method | `POST` |
 | Type | `Asynchronous` |
 | Params | `{String<required>} sourceId`<br>`{String<required>} sourceToken`<br> `{String<optional>} transactionId`<br>`{Object<optional>} payload` |
 | Returns | `Promise<Object>` |
@@ -54,7 +54,7 @@ true
 
 | **Properties** | **Type** | **Required** | **Description** |
 |:---------------|:---------|:---------:|:----------------------------|
-| accountCodeLocators | Object | **Yes** | SearchKey and values will be same as Initiate API to which incident is already created. It is used to identify the Account and an Incident to update the details of an incident. |
+| accountCodeLocators | Object | **Yes** | Key-values pairs used to locate an Account and Incident.<br> Few examples of searchKey are: Accountcode, cdic, accountname,cdir, geography, countryName, etc.<br> It can be extended in future to other unique locators. |
 | channelId | String | No | The Channel ID which is already created. Ex: C02C0CJG2NB. |
 | environment | String | **Yes** | This is used to identify the environment, it’s a free text.<br> Ex: QA, PROD, Pentest Environments. |
 | eventId | String | **Yes** | Event ID which may be present in the monitoring tool can be associated to this particular ticket ID. |

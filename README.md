@@ -130,7 +130,7 @@ catch(err) {
 
 The following ChatOps Knight API endpoints are currently covered.
 
-| **Endpoint** | **Function** | **Method** | **Dev Doc** |
+| **Endpoint** | **Function** | **HTTP Method** | **Dev Doc** |
 |:--------------|:--------------|:--------------|:--------------:|
 | `/ping` | `.healthCheck()` | GET | [Doc](docs/health-check.md) |
 | `/api/v1/initiateTicket` | `.initiateTicket(@params)` | POST | [Doc](docs/initiate-ticket.md) |

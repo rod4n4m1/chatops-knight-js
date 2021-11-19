@@ -5,7 +5,7 @@
 | **Item** | **Value** |
 |:-----------------------|:-----------------------|
 | Endpoint | `/api/v1/initiateTicket` |
-| Method | `POST` |
+| HTTP Method | `POST` |
 | Type | `Asynchronous` |
 | Params | `{String<required>} sourceId`<br>`{String<required>} sourceToken`<br> `{String<optional>} transactionId`<br>`{Object<required>} payload` |
 | Returns | `Promise<Object>` |
@@ -55,7 +55,7 @@ console.log(startIncManager(sourceId, sourceToken, payload));
 
 | **Properties** | **Type** | **Required** | **Description** |
 |:---------------|:---------|:---------:|:----------------------------|
-| accountCodeLocators | Object | **Yes** | SearchKey and values are used to identify an unique account to which incident to be created. We can use most of the fields from Accounts collection.<br> Few examples of searchKey are: Accountcode, cdic, accountname,cdir, geography, countryName, etc.<br> It can be extended in future to other unique locators |
+| accountCodeLocators | Object | **Yes** | Key-values pairs used to locate an Account and Incident.<br> Few examples of searchKey are: Accountcode, cdic, accountname,cdir, geography, countryName, etc.<br> It can be extended in future to other unique locators. |
 | additionalProperties | Object | No | For a source system (Configured additional properties) this object defines any additional properties which can be used in chatops rules. |
 | callbackAddress | String | No | This is used to return the response to this external URL Async. |
 | channelCreateRequest | Object | No | This field is for internal use, User can ignore this field.  |

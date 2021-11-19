@@ -4,6 +4,7 @@
 
 * `0.1.2`
   * Improved documentation
+  * Run `npm audit fix`, upgraded dependencies
 
 * `0.1.1`
   * Improved documentation and added dev environment instructions

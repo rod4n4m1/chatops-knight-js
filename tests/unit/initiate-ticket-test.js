@@ -8,7 +8,7 @@ const SourceId = process.env.CK_SOURCE_ID;
 const SourceToken = process.env.CK_SOURCE_TOKEN;
 const APIPath = process.env.CK_API_PATH_V1;
 const CallbackURL = process.env.CK_CALLBACK_URL;
-const TransationID = process.env.CK_TRANSACTION_ID;
+const TransactionID = process.env.CK_TRANSACTION_ID;
 
 const AccountLocator = [
     {
@@ -55,7 +55,7 @@ const knight = new Knight( {
 const mockData = generateMockData();
 payload.ticketId = `${mockData.eventTicket}`;
 
-knight.initiateTicket(SourceId, SourceToken, TransationID, payload).then(function(data){
+knight.initiateTicket(SourceId, SourceToken, TransactionID, payload).then(function(data){
   console.log('> initiateTicket output: \n', data);
 }).catch(function(initiateTicketError){
   console.error('Payload: \n', payload);
