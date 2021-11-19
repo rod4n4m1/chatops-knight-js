@@ -54,23 +54,23 @@ true
 
 | **Properties** | **Type** | **Required** | **Description** |
 |:---------------|:---------|:---------:|:----------------------------|
-| accountCodeLocators | Object | **Yes** |  |
-| channelId | String | No |  |
-| environment | String | **Yes** |  |
-| eventId | String | **Yes** |  |
+| accountCodeLocators | Object | **Yes** | SearchKey and values will be same as Initiate API to which incident is already created. It is used to identify the Account and an Incident to update the details of an incident. |
+| channelId | String | No | The Channel ID which is already created. Ex: C02C0CJG2NB. |
+| environment | String | **Yes** | This is used to identify the environment, it’s a free text.<br> Ex: QA, PROD, Pentest Environments. |
+| eventId | String | **Yes** | Event ID which may be present in the monitoring tool can be associated to this particular ticket ID. |
 | isFetchDetailsRequired | Boolean | No |  |
-| resolveTime | String | No |  |
-| resolver | String | No |  |
-| sourceIdentificationCode | String | No |  |
-| status | String | **Yes** | Valid values are `NEW`, `DISCOVERY`, `OPEN`, `INPROGRESS`, `REOPEN`, `HOLD`, `PENDING`, `CLOSE`, `CANCEL`, and `RESOLVE` |
-| statusDescription | String | No |  |
-| ticketAssignmentGroups | [String] | No |   |
-| ticketDesc | String | No |  |
+| resolveTime | String | No | Resolution Time is captured. |
+| resolver | String | No | The PIC who has resolved the incident. |
+| sourceIdentificationCode | String | No | Uniquely identifies the source system in ChatOps Knight. |
+| status | String | **Yes** | This represents the incident status like in-progress, resolved, on-hold etc. Valid values are `NEW`, `DISCOVERY`, `OPEN`, `INPROGRESS`, `REOPEN`, `HOLD`, `PENDING`, `CLOSE`, `CANCEL`, and `RESOLVE` |
+| statusDescription | String | No | Description can be added when updating the status of an incident. |
+| ticketAssignmentGroups | [String] | No | The Assignment Group which is added in the ticketing tool. ITSM owner group.  |
+| ticketDesc | String | No | The Incident ticket description can be updated by using this field. |
 | ticketDetail | Object | No |  |
-| ticketId | String | **Yes** |  |
-| ticketImpact | String | No |  |
-| ticketPriority | Number | No |  |
-| ticketType | String | No |  |
+| ticketId | String | **Yes** | The ticket ID of an incident which is used to update. |
+| ticketImpact | String | No | User can set it as High, Medium or Low based on the incident. |
+| ticketPriority | Number | No | Priority of the incident can be set. It can be 1,2,3 or 4.<br>1 being the highest priority. |
+| ticketType | String | No | It’s a free text field which gets displayed in the incident. |
 |  |  |  |  |
 
 

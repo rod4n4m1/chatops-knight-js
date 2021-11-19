@@ -52,16 +52,16 @@ true
 
 | **Properties** | **Type** | **Required** | **Description** |
 |:---------------|:---------|:---------:|:----------------------------|
-| accountCodeLocators | Object | **Yes** |  |
+| accountCodeLocators | Object | **Yes** | Key-values pairs used to locate an Account and Incident.<br> Few examples of searchKey are: Accountcode, cdic, accountname,cdir, geography, countryName, etc.<br> It can be extended in future to other unique locators. |
 | callbackUrl | String | No |   |
 | channelId | String | **Yes** |  |
 | collabPlatform | List | **Yes** | SLACK, TEAMS, or MM |
-| isUpdate | Boolean | No |  |
+| isUpdate | Boolean | No | True – when updating an already existing message.<br> False – When a new message should be posted (defaults to True) |
 | language | String | No |  |
 | message | Object | **Yes** | Slack simple JSON message or Slack Block Kit UI formatted message |
-| ticketId | String | No | Broken, do not use |
-| ts | String | No |  |
-| workspaceName | String | **Yes** | Required if accountCodeLocators is null  |
+| ticketId | String | No | A unique number which is used to create channel ID. Broken, do not use |
+| ts | String | No | Timestamp of the message to which message should be edited. |
+| workspaceName | String | **Yes** | Workspace where the channel is present. Required if accountCodeLocators is null.  |
 |  |  |  |  |
 
 

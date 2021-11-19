@@ -55,17 +55,18 @@ console.log(startIncManager(sourceId, sourceToken, payload));
 
 | **Properties** | **Type** | **Required** | **Description** |
 |:---------------|:---------|:---------:|:----------------------------|
-| accountCodeLocators | Object | **Yes** |  |
-| additionalProperties | Object | No |  |
-| callbackAddress | String | No |  |
-| channelCreateRequest | Object | No |  |
-| environment | String | **Yes** |  |
-| eventId | String | **Yes** |  |
-| ticketAssignmentGroups | [String] | No |   |
-| ticketDesc | String | **Yes** |  |
-| ticketImpact | String | No |  |
-| ticketPriority | Number | **Yes** |  |
-| ticketType | String | No |  |
+| accountCodeLocators | Object | **Yes** | SearchKey and values are used to identify an unique account to which incident to be created. We can use most of the fields from Accounts collection.<br> Few examples of searchKey are: Accountcode, cdic, accountname,cdir, geography, countryName, etc.<br> It can be extended in future to other unique locators |
+| additionalProperties | Object | No | For a source system (Configured additional properties) this object defines any additional properties which can be used in chatops rules. |
+| callbackAddress | String | No | This is used to return the response to this external URL Async. |
+| channelCreateRequest | Object | No | This field is for internal use, User can ignore this field.  |
+| environment | String | **Yes** | This is used to identify the environment, it’s a free text. <br> Ex: QA, PROD, Pentest Environments. |
+| eventId | String | **Yes** | Event Id which may be present in the monitoring tool can be associated to this particular ticket ID. |
+| ticketAssignmentGroups | [String] | No |  The Assignment group which is added in the ticketing tool. ITSM owner group. |
+| ticketDesc | String | **Yes** | The Incident ticket description, this gets displayed in the Incident channel. |
+| ticketId | String | **Yes** | A unique number identifying the Ticket which is used to create channel. |
+| ticketImpact | String | No | A unique number identifying the Ticket which is used to create channel. |
+| ticketPriority | Number | **Yes** | Priority of the incident can be set. It can be 1,2,3 or 4.<br> 1 being the highest priority. |
+| ticketType | String | No | It should be Incident. It takes Incident by default. |
 |  |  |  |  |
 
 

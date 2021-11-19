@@ -1,6 +1,6 @@
 {
   "name": "chatops-knight-js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A node.js module to interact with the Kyndryl ChatOps Knight API.",
   "main": "Knight.js",
   "scripts": {},
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/rod4n4m1/chatops-knight-js#readme",
   "dependencies": {
-    "axios": ">=0.21.1",
+    "axios": ">=0.21.2",
     "jwt-simple": "^0.5.6",
     "moment": "^2.29.1"
   },

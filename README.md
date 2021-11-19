@@ -13,9 +13,9 @@ This module provides a set of functions to help **JavaScript** Developers workin
   * Minimum: v10.x
   * Recommended: **v12.x** or **v14.x**
 * npm
-  * Tested on: **v7.24.x**
+  * Tested on: **v8.1.x**
 * Kyndryl ChatOps Knight
-  * Recommended: **v20.19**
+  * Recommended: **v20.20**
 
 **Note:** Depending on your Windows setup [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) may need to be installed first. Also, for MacOS users, you should have **xcode-select** or entire Xcode App installed.
 
