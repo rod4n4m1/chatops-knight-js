@@ -8,7 +8,7 @@
 ![npm](https://img.shields.io/npm/dm/chatops-knight-js)
 ![NPM](https://img.shields.io/npm/l/chatops-knight-js)
 
-This module provides a set of functions to help **JavaScript** Developers working with Kyndryl ChatOps knight to authenticate and access API endpoints using **JavaScript** _promises_.
+This module provides a set of functions to help **JavaScript** Developers working with Kyndryl ChatOps Knight to authenticate and access API endpoints using **JavaScript** _promises_.
 
 ## Requirements (MacOS/Windows)
 
@@ -16,7 +16,7 @@ This module provides a set of functions to help **JavaScript** Developers workin
   * Minimum: v12.x
   * Recommended: **v14.x**
 * npm
-  * Tested on: **v8.1.x**
+  * Tested on: **v8.3.x**
 * Kyndryl ChatOps Knight
   * Recommended: **v20.20**
 
@@ -138,6 +138,7 @@ The following ChatOps Knight API endpoints are currently covered.
 | `/ping` | `.healthCheck()` | GET | [Doc](docs/health-check.md) |
 | `/api/v1/initiateTicket` | `.initiateTicket(@params)` | POST | [Doc](docs/initiate-ticket.md) |
 | `/api/v1/updateTicket` | `.updateTicket(@params)` | POST | [Doc](docs/update-ticket.md) |
+| `/api/v1/sendDirectMessageToUser` | `.sendMessageToUser(@params)` | POST | [Doc](docs/send-message-user.md) |
 | `/api/v2/postMessage` | `.postMessage(@param)` | POST | [Doc](docs/post-message.md) |
 |  |  |  |  |
 
