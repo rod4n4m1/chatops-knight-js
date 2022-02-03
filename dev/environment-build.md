@@ -44,18 +44,28 @@ If you want a full IDE source code editor, you can use the `Microsoft Visual Stu
 
 ### Get ChatOps Knight API CA Certificate
 
-You need the CA Certificate from the ChatOps Knight API server to establish a HTTP (encrypted) connection to it. You can either just download the `.crt` files from the GitHub repo or use `openssl` to download it directly from the API server.
+You need the CA Certificate chain from the ChatOps Knight API server to establish a HTTP (encrypted) connection to it. You can either just download the `.crt` files from the GitHub repo or use `openssl` to download it directly from the API server.
 
 1. Download from the GitHub repo (easy way)
 
 ```shell
-
+cd my-ck-app
+curl https://raw.githubusercontent.com/rod4n4m1/chatops-knight-js/main/dev/ck-dev-ca.crt > ck-dev-ca.crt
+curl https://raw.githubusercontent.com/rod4n4m1/chatops-knight-js/main/dev/ck-prod-ca.crt > ck-prod-ca.crt
 ```
 
 2. Grab it with openssl (advanced)
 
 ```shell
+echo | \
+   openssl s_client -showcerts -verify 5 -servername chatops-dev-int.extnet.ibm.com -connect chatops-dev-int.extnet.ibm.com:443 2>/dev/null | \
+   sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > ck-dev-ca.crt
+```
 
+```shell
+echo | \
+   openssl s_client -showcerts -verify 5 -servername chatops-prod-int.extnet.ibm.com -connect chatops-prod-int.extnet.ibm.com:443 2>/dev/null | \
+   sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > ck-prod-ca.crt
 ```
 
 ### Set your own process.env file
