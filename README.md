@@ -1,9 +1,12 @@
 # ChatOps Knight JS
-<img alt="David" src="https://img.shields.io/david/rod4n4m1/chatops-knight-js">
-<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/rod4n4m1/chatops-knight-js">
-<img alt="npm" src="https://img.shields.io/npm/dm/chatops-knight-js">
-<img alt="NPM" src="https://img.shields.io/npm/l/chatops-knight-js">
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/rod4n4m1/chatops-knight-js">
+![GitHub issues](https://img.shields.io/github/issues/rod4n4m1/chatops-knight-js)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rod4n4m1/chatops-knight-js)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/rod4n4m1/chatops-knight-js)
+![GitHub top language](https://img.shields.io/github/languages/top/rod4n4m1/chatops-knight-js)
+![GitHub contributors](https://img.shields.io/github/contributors/rod4n4m1/chatops-knight-js)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/rod4n4m1/chatops-knight-js/axios)
+![npm](https://img.shields.io/npm/dm/chatops-knight-js)
+![NPM](https://img.shields.io/npm/l/chatops-knight-js)
 
 This module provides a set of functions to help **JavaScript** Developers working with Kyndryl ChatOps knight to authenticate and access API endpoints using **JavaScript** _promises_.
 

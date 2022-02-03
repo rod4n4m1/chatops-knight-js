@@ -8,7 +8,8 @@ const config = {
   ckHealth: ['ping', 'get'],
   ckInitiateTicket: ['initiateTicket', 'post'],
   ckPostMessage: ['postMessage', 'post'],
-  ckUpdateTicket: ['updateTicket', 'post']
+  ckUpdateTicket: ['updateTicket', 'post'],
+  ckSendMessageToUser: ['', 'post']
 };
 
 module.exports = config;

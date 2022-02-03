@@ -232,4 +232,38 @@ class Knight {
 
 }
 
+// /api/v1/sendDirectMessageToUser API endpoint
+/**
+* @param {String<required>} sourceId
+* @param {String<required>} sourceToken
+* @param {String} transactionId
+* @param {Object<required>} payload
+* @returns {Promise<Object>}
+*/
+async sendMessageToUser(sourceId, sourceToken, transactionId, payload){
+  const signPayload = {
+    'X-Chatops-Source-Id': sourceId,
+    emailId: payload.emailId,
+    callbackAddress: payload.callbackAddress
+  };
+  const APIToken = generateAPIToken(signPayload, sourceId, sourceToken);
+  const Options = {
+    url: `${this.rootPath}/${config.ckSendMessageToUser[0]}`,
+    method: config.ckSendMessageToUser[1],
+    headers: {
+      'X-Chatops-Source-Id': sourceId,
+      'X-Chatops-Source-Api-Token': APIToken,
+      'X-Transaction-Id': transactionId,
+    },
+    data: payload
+  }
+  try {
+    const response = await this.instance(Options);
+    return parseAxiosResponse(response);
+  } catch(err) {
+    throw parseAxiosError(err);
+  }
+}
+
+
 module.exports = Knight;
