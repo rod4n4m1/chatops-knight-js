@@ -69,7 +69,7 @@ const parseAxiosError = function(error){
   // Fix the stack
   // passing parseAxiosError as the second param will leave this function out of the trace
   Error.captureStackTrace(error, parseAxiosError);
-  if (error.response && error.response.status) {
+  if (error.response && error.response.status && error.response.status != 404) {
     error.isKnightError = true;
     if (error.response.data.error) {
       error.knightHelpMessage = error.response.data.error;
