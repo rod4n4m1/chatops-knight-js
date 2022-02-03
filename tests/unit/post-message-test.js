@@ -8,7 +8,7 @@ const SourceId = process.env.CK_SOURCE_ID;
 const SourceToken = process.env.CK_SOURCE_TOKEN;
 const APIPath = process.env.CK_API_PATH_V2;
 const CallbackURL = process.env.CK_CALLBACK_URL;
-const TransationID = process.env.CK_TRANSACTION_ID;
+const TransactionID = process.env.CK_TRANSACTION_ID;
 const SlackMessageFile = process.env.CK_SLACK_MESSAGE_FILE;
 const SlackChannelID = process.env.CK_SLACK_CHANNEL_ID;
 const SlackWorkspaceName = process.env.CK_SLACK_WS_NAME;
@@ -49,7 +49,7 @@ const knight = new Knight( {
     proxy: false
 });
 
-knight.postMessage(SourceId, SourceToken, TransationID, payload).then(function(data){
+knight.postMessage(SourceId, SourceToken, TransactionID, payload).then(function(data){
   console.log('> postMessage output: \n', data);
 }).catch(function(postMessageError){
   console.error('Payload: \n', payload);

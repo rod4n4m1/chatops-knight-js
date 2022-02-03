@@ -3,7 +3,13 @@
   "version": "0.1.2",
   "description": "A node.js module to interact with the Kyndryl ChatOps Knight API.",
   "main": "Knight.js",
-  "scripts": {},
+  "scripts": {
+    "utest:health": "bash -c 'source tests/process.env && node tests/unit/health-check-test.js'",
+    "utest:initiate:ticket": "bash -c 'source tests/process.env && node tests/unit/initiate-ticket-test.js'",
+    "utest:post:message": "bash -c 'source tests/process.env && node tests/unit/post-message-test.js'",
+    "utest:update:ticket": "bash -c 'source tests/process.env && node tests/unit/update-ticket-test.js'",
+    "utest:send:message": "bash -c 'source tests/process.env && node tests/unit/send-message-test.js'"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rod4n4m1/chatops-knight-js"

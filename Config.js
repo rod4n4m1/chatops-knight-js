@@ -9,7 +9,7 @@ const config = {
   ckInitiateTicket: ['initiateTicket', 'post'],
   ckPostMessage: ['postMessage', 'post'],
   ckUpdateTicket: ['updateTicket', 'post'],
-  ckSendMessageToUser: ['', 'post']
+  ckSendMessageToUser: ['sendDirectMessageToUser', 'post']
 };
 
 module.exports = config;

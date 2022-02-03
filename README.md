@@ -13,8 +13,8 @@ This module provides a set of functions to help **JavaScript** Developers workin
 ## Requirements (MacOS/Windows)
 
 * Node JS
-  * Minimum: v10.x
-  * Recommended: **v12.x** or **v14.x**
+  * Minimum: v12.x
+  * Recommended: **v14.x**
 * npm
   * Tested on: **v8.1.x**
 * Kyndryl ChatOps Knight
