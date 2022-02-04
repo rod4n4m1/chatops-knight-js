@@ -29,7 +29,6 @@ try {
 const payload = {
   accountCodeLocators: AccountLocator,
   collabPlatform: "SLACK",
-  emailId: "rod.anami@kyndryl.com",
   //workspaceName: SlackWorkspaceName,
   message: message,
   emailId: SlackUserEmailID,

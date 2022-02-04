@@ -1,14 +1,19 @@
 #!/bin/sh
 # ChatOps Knight API test env
+# This is generated on the management portal
 export CK_SOURCE_TOKEN=""
 export CK_SOURCE_ID=""
+# CK API server
 export CK_BASE_URL="https://chatops-dev-int.extnet.ibm.com"
+# Select the CK API version
 export CK_API_PATH_V1="api/v1"
 export CK_API_PATH_V2="api/v2"
 export CK_CA_CERT="ck-dev-ca.crt"
+# Your API endpoint, you can use a Postman mockup server for dev
 export CK_CALLBACK_URL=""
 export CK_TRANSACTION_ID=""
 export CK_SLACK_MESSAGE_FILE=""
 export CK_SLACK_CHANNEL_ID=""
 export CK_SLACK_WS_NAME=""
+# A real e-mail address
 export CK_SLACK_USER_EMAIL="rod.anami@acme.com"

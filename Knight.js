@@ -241,8 +241,8 @@ class Knight {
   async sendMessageToUser(sourceId, sourceToken, transactionId, payload){
     const signPayload = {
       'X-Chatops-Source-Id': sourceId,
+      'X-Transaction-Id': transactionId,
       emailId: payload.emailId,
-      callbackAddress: payload.callbackAddress
     };
     const APIToken = generateAPIToken(signPayload, sourceId, sourceToken);
     const Options = {
@@ -251,7 +251,7 @@ class Knight {
       headers: {
         'X-Chatops-Source-Id': sourceId,
         'X-Chatops-Source-Api-Token': APIToken,
-        'X-Transaction-Id': transactionId,
+        'X-Transaction-Id': transactionId
       },
       data: payload
     }
