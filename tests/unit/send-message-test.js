@@ -29,7 +29,7 @@ try {
 const payload = {
   accountCodeLocators: AccountLocator,
   collabPlatform: "SLACK",
-  //workspaceName: SlackWorkspaceName,
+  // workspaceName: SlackWorkspaceName,
   message: message,
   emailId: SlackUserEmailID,
   callbackUrl: CallbackURL,
