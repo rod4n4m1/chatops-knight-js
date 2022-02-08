@@ -2,6 +2,9 @@
 
 ## Change Log
 
+* `0.1.3`
+  * 
+
 * `0.1.2`
   * Improved documentation
   * Run `npm audit fix`, upgraded dependencies

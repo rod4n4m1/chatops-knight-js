@@ -152,7 +152,6 @@ Follow the detailed instructions from this [doc](dev/environment-build.md).
   * ChatOps Knight Production Internal API documentation
   * ChatOps Knight Development Internal API documentation
 
-
 ### Contributing
 If you want to contribute to the module and make it better, your help is very welcome. You can do so submitting a **Pull Request**. It will be reviewed and merged to main branch if accepted.
 

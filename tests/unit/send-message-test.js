@@ -57,5 +57,5 @@ knight.sendMessageToUser(SourceId, SourceToken, TransactionID, payload).then(fun
       console.error('sendMessageToUser error details: \n',sendMessageError.knightHelpMessage.details);
     }
   }
-  console.error('====================================Full Stack======================================= \n',sendMessageError);
+  // console.error('====================================Full Stack======================================= \n',sendMessageError);
 });
